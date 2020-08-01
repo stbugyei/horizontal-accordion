@@ -29,11 +29,11 @@ html {
  .accordion_wrapper{
    width: 500px;
    margin: 150px auto;
-   transition: all 400ms ease;
+   transition: all .3s;
  }
 
  .accordion{
-  transition: all 400ms ease;
+  transition: all .3s;
 }
 
  .accordion_item{
@@ -120,8 +120,8 @@ html {
    overflow: hidden;
    max-height: 0;
    opacity: 0;
-   -webkit-transition: max-height .3s;
-   transition: max-height .3s;
+   -webkit-transition: all .3s;
+   transition: all .3s;
    transform: scale(0);
    transform-origin: left;
  }
