@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    user-select: none;
+}
+
+html {
+  overflow-y: scroll; 
+  width: 100vw;
+}
+
+
+  body{
+    font-family: 'Poppins', sans-serif;
+    background: #e3ebd6;
+  }
+
+
+  .container {
+    width: 1320px;
+    margin: 0 auto;
+  }
+
+
+ .accordion_wrapper{
+   width: 500px;
+   margin: 150px auto;
+   transition: all 400ms ease;
+ }
+
+ .accordion{
+  transition: all 400ms ease;
+}
+
+ .accordion_item{
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+  cursor: pointer;
+  }
+
+
+  /*=== Formatting li links ===*/
+
+  li:nth-child(1) .accordion_title,
+  li:nth-child(1) .inner_content{
+    background: #e3e9ff;
+    padding: 15px;
+    color: #777;
+  }
+
+  li:nth-child(2) .accordion_title,
+  li:nth-child(2) .inner_content{
+    background: #f9892e;
+  }
+
+
+  li:nth-child(3) .accordion_title{
+    background-image: linear-gradient(to right top, #00cffb, #00b8ea, #00a2d7, #028cc4, #1176af);
+    padding: 15px;
+  }
+
+
+  li:nth-child(4) .accordion_title{
+    color: #000;
+    background: #B3E5FC;
+  }
+
+  li:nth-child(4) .inner_content{
+    border-top: 2px solid;
+    padding: 10px;
+    background: #B3E5FC;
+  }
+
+
+ .accordion_title{
+   text-decoration: none;
+   color: #fefcff;
+   background: #BDBDBD;
+   padding: 15px;
+   text-transform: capitalize;
+   text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+   display: flex;
+   justify-content: space-between;
+ }
+
+
+/*==== Ajusting the width of the accordion -title items ===*/
+
+ .fa-plus-circle{
+  margin-top: 5px;
+  transition: all 600ms ease;
+}
+
+ .accordion_title-text{
+   width: 90%;
+ }
+
+
+ /*=== toggling between plus and minus signs with ::before ===*/
+
+ /* [id^=expand]:checked ~ label.accordion_title > span > i.fa-plus-circle::before{
+  content: "\f056";  
+ } */
+
+
+ /*=== toggling between plus and minus signs without ::before ===*/
+ [id^=expand]:checked ~ label.accordion_title > span > i.fa-plus-circle{
+  transform: rotate(45deg);
+  color: rgb(190, 38, 38);
+ }
+
+
+ .accordion_content{
+   width: 100%;
+   overflow: hidden;
+   max-height: 0;
+   opacity: 0;
+   -webkit-transition: all 400ms ease;
+   transition: all 400ms ease;
+   transform: scale(0);
+   transform-origin: left;
+ }
+
+ input{
+   display: none;
+ }
+
+ /*=== Expanding and collapsing the accordion_content ===*/
+
+ [id^=expand]:checked ~ .accordion_content{
+  max-height: 250px; 
+  opacity: 1;
+  transform: scale(1);
+ }
+
+ .inner_content{
+  width: 100%;
+ }
+
+ .accordion_content p{
+  display: block;
+  font-size: 14px;
+  text-align: justify;
+ }
+
+
+h2.title{
+  text-align: center; 
+  margin-bottom: 30px; 
+  text-transform: capitalize;
+}
+
+.inner_content-items{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.inner_content-clock{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inner_content-calendar{
+  width: 60%;
+  margin-left: 15px;
+}
+
+
+  @media all and (max-width: 1037px){
+    .container{
+        width: auto;
+    }
+
+   .accordion_wrapper{
+      width: auto;
+      margin: 50px 15px;
+    }
+
+    .accordion_content p {
+      text-align: initial;
+    }
+
+
+    [id^=expand]:checked ~ .accordion_content{
+      overflow-y: scroll;
+     }
+
+  }
