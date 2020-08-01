@@ -120,8 +120,8 @@ html {
    overflow: hidden;
    max-height: 0;
    opacity: 0;
-   -webkit-transition: all 400ms ease;
-   transition: all 400ms ease;
+   -webkit-transition: max-height 400ms ease;
+   transition: max-height 400ms ease;
    transform: scale(0);
    transform-origin: left;
  }
