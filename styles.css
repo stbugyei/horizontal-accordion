@@ -118,10 +118,10 @@ html {
  .accordion_content{
    width: 100%;
    overflow: hidden;
-   height: 0;
+   max-height: 0;
    opacity: 0;
-   -webkit-transition: height .3s;
-   transition: height .3s;
+   -webkit-transition: max-height .3s;
+   transition: max-height .3s;
    transform: scale(0);
    transform-origin: left;
  }
@@ -133,7 +133,7 @@ html {
  /*=== Expanding and collapsing the accordion_content ===*/
 
  [id^=expand]:checked ~ .accordion_content{
-  height: 100%; 
+  max-height: 250px; 
   opacity: 1;
   transform: scale(1);
  }
